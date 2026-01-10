@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUI Sign - Login</title>
+    <style>
+        /* ============================================
+           CSS STYLES - Can be moved to styles.css
+           ============================================ */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #c19a6b 0%, #a67c52 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .login-container {
+            background: linear-gradient(135deg, #c9a876 0%, #b8965f 100%);
+            width: 100%;
+            max-width: 450px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .logo-image {
+            height: 60px;
+            width: auto;
+        }
+
+        .login-title {
+            color: #000000;
+            font-size: 2em;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .welcome-text {
+            color: #000000;
+            font-size: 1.3em;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #000000;
+            font-size: 1em;
+            margin-bottom: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .form-label {
+            color: #000000;
+            font-size: 0.95em;
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 20px;
+            color: #000000;
+            font-size: 1.2em;
+            pointer-events: none;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 16px 20px 16px 55px;
+            border: 2px solid rgba(0, 0, 0, 0.2);
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.15);
+            color: #000000;
+            font-size: 1em;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-input::placeholder {
+            color: #666666;
+        }
+
+        .form-input:focus {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(0, 0, 0, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 16px;
+            background: #0ea5e9;
+            color: #ffffff;
+            font-size: 1.1em;
+            font-weight: 600;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .login-button:hover {
+            background: #0284c7;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(14, 165, 233, 0.4);
+        }
+
+        .login-button:active {
+            transform: translateY(-1px);
+        }
+
+        .divider {
+            margin-top: 30px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Responsive Design for Mobile */
+        @media (max-width: 768px) {
+            .login-container {
+                max-width: 100%;
+                padding: 40px 30px;
+                border-radius: 0;
+                min-height: 100vh;
+                border: none;
+                box-shadow: none;
+            }
+
+            .logo-image {
+                height: 50px;
+            }
+
+            .login-title {
+                font-size: 1.6em;
+            }
+
+            .welcome-text {
+                font-size: 1.1em;
+            }
+
+            .subtitle {
+                font-size: 0.9em;
+            }
+
+            .form-input {
+                padding: 14px 18px 14px 50px;
+            }
+
+            .login-button {
+                padding: 14px;
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px 20px;
+            }
+
+            .logo-title {
+                font-size: 1.8em;
+            }
+
+            .logo-image {
+                height: 45px;
+            }
+
+            .login-title {
+                font-size: 1.4em;
+            }
+        }
+
+        /* Desktop specific styles */
+        @media (min-width: 1024px) {
+            .login-container {
+                max-width: 500px;
+                padding: 60px 50px;
+            }
+
+            .logo-image {
+                height: 75px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ============================================
+         HTML STRUCTURE
+         ============================================ -->
+    
+    <div class="login-container">
+        <div class="logo-container">
+            <img src="download-removebg-preview.png" alt="AUI SIGN Logo" class="logo-image">
+        </div>
+        <h2 class="login-title">Log in</h2>
+        
+        <p class="welcome-text">Hey! Welcome back</p>
+        <p class="subtitle">Sign In to your account</p>
+        
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <div class="form-group">
+                <label class="form-label">Email Address</label>
+                <div class="input-wrapper">
+                    <span class="input-icon">✉</span>
+                    <input 
+                        type="email" 
+                        class="form-input" 
+                        id="emailInput"
+                        placeholder="Enter your email address"
+                        required
+                    >
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Password</label>
+                <div class="input-wrapper">
+                    <span class="input-icon">🔒</span>
+                    <input 
+                        type="password" 
+                        class="form-input" 
+                        id="passwordInput"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+            </div>
+            
+            <button type="submit" class="login-button">LOG IN</button>
+        </form>
+        
+        <div class="divider"></div>
+    </div>
+
+    <!-- ============================================
+         JAVASCRIPT - Can be moved to script.js
+         ============================================ -->
+    
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('emailInput').value;
+            const password = document.getElementById('passwordInput').value;
+            
+            // Basic validation
+            if (email && password) {
+                // Add animation feedback
+                const button = event.target.querySelector('.login-button');
+                button.textContent = 'LOGGING IN...';
+                button.style.background = '#0284c7';
+                
+                // Simulate login process
+                setTimeout(() => {
+                    alert(`Login successful!\nEmail: ${email}`);
+                    // Here you would typically redirect to the next page
+                    window.location.href = 'Homepage.html';
+                    
+                    // Reset button
+                    button.textContent = 'LOG IN';
+                    button.style.background = '#0ea5e9';
+                }, 1500);
+            }
+        }
+
+        // Add input focus animations
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'scale(1.02)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
