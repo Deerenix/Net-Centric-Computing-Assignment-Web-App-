@@ -1,10 +1,26 @@
+
 from django.shortcuts import render
 
-def home(request):
-	return render(request, 'main/home.html')
+# Homepage view
+def homepage(request):
+	return render(request, 'main/Homepage.html')
 
+# About page view
 def about(request):
-	return render(request, 'main/about.html')
+	return render(request, 'main/About.html')
 
-def contact(request):
-	return render(request, 'main/contact.html')
+# Index (login) page view
+def index(request):
+	return render(request, 'main/index.html')
+
+# Sign in page view
+def signin(request):
+	return render(request, 'main/Sign in page.html')
+
+# Homepage view
+def homepage(request):
+	return render(request, 'main/Homepage.html')
+
+# Sign in page view
+def signin(request):
+	return render(request, 'main/Sign in page.html')
