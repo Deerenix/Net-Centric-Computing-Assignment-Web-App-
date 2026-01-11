@@ -95,4 +95,8 @@ This backend is built with Django, a Python web framework. It handles routing, v
 
 ---
 
-For further backend customization (models, authentication, APIs), extend the Django app as needed.
+---
+
+## Conclusion
+
+The backend of this project provided the essential structure and logic for the web application, handling URL routing, view rendering, static file management, and configuration. By leveraging Django’s robust framework, the backend ensured that all frontend pages were served efficiently and that static assets were accessible. This setup allows for easy extension, future integration of models or authentication, and reliable local or networked deployment.
