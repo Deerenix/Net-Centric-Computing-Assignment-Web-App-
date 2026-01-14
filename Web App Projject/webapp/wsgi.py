@@ -1,3 +1,4 @@
+# This file configures WSGI for running the Django project with a web server.
 """
 WSGI config for webapp project.
 

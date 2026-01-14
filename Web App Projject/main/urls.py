@@ -1,3 +1,4 @@
+# This file defines URL patterns for the 'main' app.
 from django.urls import path
 from . import views
 

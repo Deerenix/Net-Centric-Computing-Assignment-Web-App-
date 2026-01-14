@@ -1,3 +1,4 @@
+# This file contains view functions that handle HTTP requests and return responses for the 'main' app.
 
 from django.shortcuts import render
 

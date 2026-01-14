@@ -1,3 +1,17 @@
+/**
+ * script.js
+ * This file contains JavaScript code for the frontend of the web application.
+ * 1. Manages global variables and user session state.
+ * 2. Handles navigation between different pages or sections.
+ * 3. Implements login and authentication logic for users.
+ * 4. Provides functions for form validation and user input handling.
+ * 5. Updates the DOM dynamically based on user actions.
+ * 6. Can be extended to include AJAX requests for backend communication.
+ * 7. Organizes code into logical sections for maintainability.
+ * 8. Uses event listeners to respond to user interactions.
+ * 9. Ensures a responsive and interactive user experience.
+ * 10. Keeping this file modular and well-documented improves frontend reliability.
+ */
   // ========== GLOBAL VARIABLES ==========
         let currentUser = null;
 

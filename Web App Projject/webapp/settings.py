@@ -1,3 +1,4 @@
+# This file contains the main settings and configuration for the Django project.
 """
 Django settings for webapp project.
 

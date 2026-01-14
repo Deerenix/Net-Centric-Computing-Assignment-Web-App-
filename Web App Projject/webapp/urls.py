@@ -1,3 +1,4 @@
+# This file defines the root URL patterns for the Django project.
 """
 URL configuration for webapp project.
 

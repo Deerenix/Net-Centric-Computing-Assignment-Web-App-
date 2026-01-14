@@ -1,3 +1,4 @@
+# This file configures ASGI for asynchronous web server support in the Django project.
 """
 ASGI config for webapp project.
 
